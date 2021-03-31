@@ -16,7 +16,7 @@ app.use(morgan('tiny'));
 app.use('/api/book',bookRouter);
 app.use('/api/author',authorRouter);
 //connect to mongodb
-mongoose.connect('mongodb+srv://youssefkafa:123kafa123@libapp.u0dkt.mongodb.net/libApp-database?retryWrites=true&w=majority',{ useNewUrlParser: true,useUnifiedTopology: true, dbName:'libApp-database' } )
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://youssefkafa:123kafa123@libapp.u0dkt.mongodb.net/libApp-database?retryWrites=true&w=majority',{ useNewUrlParser: true,useUnifiedTopology: true, dbName:'libApp-database' } )
 .then(()=>{
 console.log("mongodb is connected");
 }).catch(
@@ -25,6 +25,5 @@ console.log("mongodb is connected");
     }
 );
 //
-app.listen('3000', ()=>{
-    console.log('server is running');
-});
+app.listen(process.env.PORT ||'3000', ()=>{
+    console.log("Express server listening on port %d in %s mode",process.env.PORT);});

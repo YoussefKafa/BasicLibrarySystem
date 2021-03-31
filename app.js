@@ -16,6 +16,8 @@ app.use(morgan('tiny'));
 //routers
 app.use('/api/book',bookRouter);
 app.use('/api/author',authorRouter);
+app.use(express.static(__dirname + '/dist/'));
+app.use('/src/assets', express.static(__dirname + '/src/assets/'));
 app.set('port', (process.env.PORT || 3000));
 //connect to mongodb
 mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://youssefkafa:123kafa123@libapp.u0dkt.mongodb.net/libApp-database?retryWrites=true&w=majority',{ useNewUrlParser: true,useUnifiedTopology: true, dbName:'libApp-database' } )

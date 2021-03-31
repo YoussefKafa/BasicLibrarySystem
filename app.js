@@ -26,4 +26,4 @@ console.log("mongodb is connected");
 );
 //
 app.listen(process.env.PORT ||'3000','0.0.0.0', ()=>{
-    console.log("Express server listening on port %d in %s mode",process.env.PORT);});
+    console.log("server started");});

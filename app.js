@@ -14,6 +14,16 @@ app.use(bodyParser.json());
 app.use(morgan('tiny'));
 
 //routers
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+    );
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+  
+    next();
+  });
 app.use('/api/book',bookRouter);
 app.use('/api/author',authorRouter);
 app.use(express.static(__dirname + '/dist/'));

@@ -7,6 +7,7 @@ const morgan=require('morgan');
 const bookRouter=require('../backend/router/books');
 const authorRouter=require('../backend/router/authors');
 const { Author } = require('./model/Author');
+const { Book } = require('./model/Book');
 
 //using
 app.use(bodyParser.json());

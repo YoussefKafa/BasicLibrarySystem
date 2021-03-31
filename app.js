@@ -25,5 +25,5 @@ console.log("mongodb is connected");
     }
 );
 //
-app.listen(process.env.PORT ||'3000','0.0.0.0', ()=>{
+app.listen(process.env.PORT ||'5000','0.0.0.0', ()=>{
     console.log("server started");});

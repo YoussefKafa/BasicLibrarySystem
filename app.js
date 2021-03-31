@@ -16,7 +16,7 @@ app.use(morgan('tiny'));
 app.use('/api/book',bookRouter);
 app.use('/api/author',authorRouter);
 //connect to mongodb
-mongoose.connect('mongodb://localhost:27017/myApp', {useNewUrlParser: true,dbName:"libDB",useUnifiedTopology:true})
+mongoose.connect('mongodb+srv://youssefkafa:123kafa123@libapp.u0dkt.mongodb.net/libApp-database?retryWrites=true&w=majority',{ useNewUrlParser: true,useUnifiedTopology: true, dbName:'libApp-database' } )
 .then(()=>{
 console.log("mongodb is connected");
 }).catch(
